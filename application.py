@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-import cv2
 import os
 from werkzeug.utils import secure_filename
 from sampler import image_classifier

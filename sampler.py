@@ -115,7 +115,10 @@ def image_classifier():
 
     # Load the Model 
     model = vgg16_tuned()
-    model.load_state_dict(torch.load('state_dict_model.pt'), strict=False)
+    if torch.cuda.is_available():
+        model.load_state_dict(torch.load('state_dict_model.pt'), strict=False)
+    else:
+        model.load_state_dict(torch.load('state_dict_model.pt', map_location = torch.device('cpu')), strict=False)
     model.eval()
     model.to(device)
 

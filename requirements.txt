@@ -4,5 +4,5 @@ torch
 torchvision
 matplotlib
 flask
-opencv-python
-glob
+opencv-python==4.2.0.34
+glob2
